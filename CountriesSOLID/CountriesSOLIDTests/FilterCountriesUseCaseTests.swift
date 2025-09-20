@@ -1,6 +1,6 @@
 
 import XCTest
-@testable import YourAppModuleName
+@testable import CountriesSOLID
 
 final class FilterCountriesUseCaseTests: XCTestCase {
     func testFilter() {

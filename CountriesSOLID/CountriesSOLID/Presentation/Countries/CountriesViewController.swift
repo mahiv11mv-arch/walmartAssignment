@@ -12,13 +12,18 @@ final class CountriesViewController: UITableViewController, UISearchResultsUpdat
     private let emptyView = EmptyStateView()
     private let errorView = ErrorStateView()
 
+
     init(fetchUseCase: FetchCountriesUseCase, filterUseCase: FilterCountriesUseCase) {
         self.fetchUseCase = fetchUseCase
         self.filterUseCase = filterUseCase
         super.init(style: .plain)
     }
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Countries"
