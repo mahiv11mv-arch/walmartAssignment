@@ -10,8 +10,19 @@
 		C13F0DE82E7E3DFA007D2023 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = C13F0DE72E7E3DFA007D2023 /* AsyncAlgorithms */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C13F0DF12E7E40DD007D2023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C13F0D862E7E3D0A007D2023 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C13F0D8D2E7E3D0A007D2023;
+			remoteInfo = CountriesSOLID;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		C13F0D8E2E7E3D0A007D2023 /* CountriesSOLID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesSOLID.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13F0DED2E7E40DD007D2023 /* CountriesSOLIDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesSOLIDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -33,6 +44,11 @@
 			path = CountriesSOLID;
 			sourceTree = "<group>";
 		};
+		C13F0DEE2E7E40DD007D2023 /* CountriesSOLIDTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CountriesSOLIDTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +60,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C13F0DEA2E7E40DD007D2023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				C13F0D902E7E3D0A007D2023 /* CountriesSOLID */,
+				C13F0DEE2E7E40DD007D2023 /* CountriesSOLIDTests */,
 				C13F0D8F2E7E3D0A007D2023 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C13F0D8E2E7E3D0A007D2023 /* CountriesSOLID.app */,
+				C13F0DED2E7E40DD007D2023 /* CountriesSOLIDTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +114,29 @@
 			productReference = C13F0D8E2E7E3D0A007D2023 /* CountriesSOLID.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C13F0DEC2E7E40DD007D2023 /* CountriesSOLIDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13F0DF32E7E40DD007D2023 /* Build configuration list for PBXNativeTarget "CountriesSOLIDTests" */;
+			buildPhases = (
+				C13F0DE92E7E40DD007D2023 /* Sources */,
+				C13F0DEA2E7E40DD007D2023 /* Frameworks */,
+				C13F0DEB2E7E40DD007D2023 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C13F0DF22E7E40DD007D2023 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C13F0DEE2E7E40DD007D2023 /* CountriesSOLIDTests */,
+			);
+			name = CountriesSOLIDTests;
+			packageProductDependencies = (
+			);
+			productName = CountriesSOLIDTests;
+			productReference = C13F0DED2E7E40DD007D2023 /* CountriesSOLIDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +149,10 @@
 				TargetAttributes = {
 					C13F0D8D2E7E3D0A007D2023 = {
 						CreatedOnToolsVersion = 16.4;
+					};
+					C13F0DEC2E7E40DD007D2023 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = C13F0D8D2E7E3D0A007D2023;
 					};
 				};
 			};
@@ -122,12 +174,20 @@
 			projectRoot = "";
 			targets = (
 				C13F0D8D2E7E3D0A007D2023 /* CountriesSOLID */,
+				C13F0DEC2E7E40DD007D2023 /* CountriesSOLIDTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C13F0D8C2E7E3D0A007D2023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13F0DEB2E7E40DD007D2023 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -144,7 +204,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C13F0DE92E7E40DD007D2023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C13F0DF22E7E40DD007D2023 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C13F0D8D2E7E3D0A007D2023 /* CountriesSOLID */;
+			targetProxy = C13F0DF12E7E40DD007D2023 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C13F0DA22E7E3D0B007D2023 /* Debug */ = {
@@ -320,6 +395,40 @@
 			};
 			name = Release;
 		};
+		C13F0DF42E7E40DD007D2023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.CountriesSOLIDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountriesSOLID.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountriesSOLID";
+			};
+			name = Debug;
+		};
+		C13F0DF52E7E40DD007D2023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.CountriesSOLIDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountriesSOLID.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CountriesSOLID";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +446,15 @@
 			buildConfigurations = (
 				C13F0DA22E7E3D0B007D2023 /* Debug */,
 				C13F0DA32E7E3D0B007D2023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C13F0DF32E7E40DD007D2023 /* Build configuration list for PBXNativeTarget "CountriesSOLIDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13F0DF42E7E40DD007D2023 /* Debug */,
+				C13F0DF52E7E40DD007D2023 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
