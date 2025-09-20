@@ -1,25 +1,7 @@
 
-# Countries SOLID (UIKit) — Drop-in Sources
+# Countries SOLID (UIKit) 
 
-This zip contains the **UIKit SOLID** implementation files only (no .xcodeproj). Add them into a fresh Xcode project.
-
-## Quick Setup (Xcode 15+)
-
-1. **Create** a new iOS App project (UIKit, App life cycle). Name it e.g. `CountriesSOLID`.
-
-2. **Delete** the template ViewController/Storyboard files (we use programmatic UI).
-
-3. **Add Files to Project…** and select the contents of this zip:
-
-   - `App/` (AppDelegate, SceneDelegate)
-
-   - `Presentation/` (Coordinator, ViewController, Cell, States)
-
-   - `Domain/`, `Data/`
-
-   - Optionally `Tests/` (update `@testable import YourAppModuleName` to your module name)
-
-4. **Build & Run** (⌘R). You should see the Countries list after it fetches.
+**Build & Run** (⌘R). You should see the Countries list after it fetches.
 
 
 ## Notes
