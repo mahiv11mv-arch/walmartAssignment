@@ -1,9 +1,13 @@
 
 import UIKit
 
-final class CountriesViewController: UITableViewController, UISearchResultsUpdating {
-    private let fetchUseCase: FetchCountriesUseCase
-    private let filterUseCase: FilterCountriesUseCase
+
+class CountriesViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    var fetchUseCase: FetchCountriesUseCase!
+    var filterUseCase: FilterCountriesUseCase!
 
     private var countries: [Country] = []
     private var filtered: [Country] = []
@@ -11,23 +15,20 @@ final class CountriesViewController: UITableViewController, UISearchResultsUpdat
     private let searchController = UISearchController(searchResultsController: nil)
     private let emptyView = EmptyStateView()
     private let errorView = ErrorStateView()
-
-
-    init(fetchUseCase: FetchCountriesUseCase, filterUseCase: FilterCountriesUseCase) {
-        self.fetchUseCase = fetchUseCase
-        self.filterUseCase = filterUseCase
-        super.init(style: .plain)
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        // Safety: catch missing DI early
+        assert(fetchUseCase != nil && filterUseCase != nil, "Dependencies not injected")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
+        
         title = "Countries"
-        tableView.register(CountryCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 72
 
@@ -38,9 +39,14 @@ final class CountriesViewController: UITableViewController, UISearchResultsUpdat
         navigationItem.hidesSearchBarWhenScrolling = false
 
         errorView.button.addTarget(self, action: #selector(retry), for: .touchUpInside)
-
+        
         load()
     }
+
+}
+
+extension  CountriesViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+
 
     @objc private func retry() { load() }
 
@@ -76,10 +82,10 @@ final class CountriesViewController: UITableViewController, UISearchResultsUpdat
         if !q.isEmpty && filtered.isEmpty { setBackground(view: emptyView) } else if tableView.backgroundView === emptyView { setBackground(view: nil) }
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { filtered.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { filtered.count }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CountryCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
         cell.configure(with: filtered[indexPath.row])
         return cell
     }

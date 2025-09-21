@@ -14,7 +14,18 @@ final class AppCoordinator {
         let fetch = DefaultFetchCountriesUseCase(repo: repo)
         let filter = DefaultFilterCountriesUseCase()
 
-        let vc = CountriesViewController(fetchUseCase: fetch, filterUseCase: filter)
+        // Storyboard-first instantiation
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(
+            identifier: "CountriesViewController"
+        ) as? CountriesViewController else {
+            fatalError("Storyboard misconfigured: CountriesViewController")
+        }
+
+        // Property injection (DIP)
+        vc.fetchUseCase = fetch
+        vc.filterUseCase = filter
+
         let nav = UINavigationController(rootViewController: vc)
         window.rootViewController = nav
         window.makeKeyAndVisible()
